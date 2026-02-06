@@ -1,0 +1,1342 @@
+{
+  "info": {
+    "_postman_id": "430864fc-2b88-44eb-81ec-48b9c77fe922",
+    "name": "Connectly API Security Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52139761",
+    "_collection_link": "https://go.postman.co/collection/52139761-430864fc-2b88-44eb-81ec-48b9c77fe922?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"testuser1\", \"email\": \"testuser1@example.com\", \"password\": \"SecurePass123!\", \"password_confirm\": \"SecurePass123!\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": [
+        {
+          "name": "User Registration",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "id": 0
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"testuser1\",\n    \"email\": \"testuser1@example.com\",\n    \"password\": \"SecurePass123!\",\n    \"password_confirm\": \"SecurePass123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/register/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "register",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:09:12 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "208",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user\": {\n        \"id\": 1,\n        \"username\": \"testuser1\",\n        \"email\": \"testuser1@example.com\",\n        \"date_joined\": \"2026-02-06T13:09:11.997070Z\"\n    },\n    \"token\": \"3757ae89966ce31e4bb4a72b53c788069fc75ccc\",\n    \"message\": \"User registered successfully\"\n}"
+        },
+        {
+          "name": "User Login (Token Generation)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "id": 0,
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\": \"testuser1\", \"password\": \"SecurePass123!\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/login/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "login",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:13:15 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "206",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"token\": \"3757ae89966ce31e4bb4a72b53c788069fc75ccc\",\n    \"user\": {\n        \"id\": 1,\n        \"username\": \"testuser1\",\n        \"email\": \"testuser1@example.com\",\n        \"date_joined\": \"2026-02-06T13:09:11.997070Z\"\n    },\n    \"message\": \"Authentication successful!\"\n}"
+        },
+        {
+          "name": "Create Post (Authenticated)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "id": 0,
+                "sortOrder": 0,
+                "disabled": true
+              },
+              {
+                "key": "Authorization",
+                "value": "Token 3757ae89966ce31e4bb4a72b53c788069fc75ccc",
+                "type": "text",
+                "id": 1,
+                "sortOrder": 1
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"content\": \"This is my first secure post using my new token!\",\n    \"author\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/posts/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "posts",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:19:06 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "167",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"content\": \"This is my first secure post using my new token!\",\n    \"author\": 1,\n    \"author_username\": \"testuser1\",\n    \"created_at\": \"2026-02-06T13:19:06.820434Z\",\n    \"comments\": []\n}"
+        },
+        {
+          "name": "Create Post (Unauthenticated)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "id": 0,
+                "disabled": true
+              },
+              {
+                "key": "Authorization",
+                "value": "Token 3757ae89966ce31e4bb4a72b53c788069fc75ccc",
+                "type": "text",
+                "id": 1,
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"content\": \"This post should fail because I'm not logged in!\",\n    \"author\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/posts/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "posts",
+                ""
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:23:00 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "WWW-Authenticate",
+              "value": "Token",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "58",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+        },
+        {
+          "name": "Create Second User (The \"Hacker\")",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"testuser2\",\n    \"email\": \"testuser2@example.com\",\n    \"password\": \"SecurePass123!\",\n    \"password_confirm\": \"SecurePass123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/register/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "register",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:40:30 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "208",
+              "type": "text"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains; preload",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user\": {\n        \"id\": 2,\n        \"username\": \"testuser2\",\n        \"email\": \"testuser2@example.com\",\n        \"date_joined\": \"2026-02-06T13:40:30.140884Z\"\n    },\n    \"token\": \"f8092bfda9e68e1a7ea74b3aecc77f1ffc7732a2\",\n    \"message\": \"User registered successfully\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "GET",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "name": "cache-control",
+            "sortOrder": 2,
+            "infoTitle": "We recommend using this header",
+            "info": "Postman added \"Cache-Control: no-cache\" as a precautionary measure to prevent the server from returning stale response when one makes repeated requests.\n\nYou can remove this header in the app settings or enter a new one with a different value.",
+            "allowedToToggle": false,
+            "disableEdit": true,
+            "previewSettingsLink": "Go to settings",
+            "key": "Cache-Control",
+            "value": "no-cache",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "postman-token",
+            "sortOrder": 3,
+            "infoTitle": "We recommend using this header",
+            "info": "The Postman-Token header appends a random UUID to every outgoing request. Postman adds this header for API developers to better debug requests sent and to ensure separate requests appear distinct to the receiving server.\n\nYou can remove this header in the app settings.",
+            "allowedToToggle": false,
+            "disableEdit": true,
+            "previewSettingsLink": "Go to settings",
+            "key": "Postman-Token",
+            "value": "<calculated when request is sent>",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "host",
+            "sortOrder": 6,
+            "infoTitle": "We recommend using this header",
+            "info": "The Host header is added to identify the domain name for which a request is being sent to the server. This header is implicitly sent by every HTTP client.\n\nYou can remove the header or enter a new one with a different value. It is most likely that without this header, your request will return an HTTP 400 error.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Host",
+            "value": "<calculated when request is sent>",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "user-agent",
+            "sortOrder": 7,
+            "infoTitle": "We recommend using this header",
+            "info": "The User-Agent header is added to help the server identify Postman as the HTTP requesting application or client.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "User-Agent",
+            "value": "PostmanRuntime/7.39.1",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "accept",
+            "sortOrder": 8,
+            "infoTitle": "We recommend using this header",
+            "info": "The \"Accept: */*\" header is added to tell the server that Postman can understand and process all forms of response content types.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Accept",
+            "value": "*/*",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "accept-encoding",
+            "sortOrder": 9,
+            "infoTitle": "We recommend using this header",
+            "info": "The Accept-Encoding header is added to indicate to the server that Postman HTTP client supports a defined list of content-encoding or compression algorithms as response.\n\nYou can remove the header or enter a new one with a different value. Doing that may not accurately render the response within the app.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Accept-Encoding",
+            "value": "gzip, deflate, br",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "connection",
+            "sortOrder": 10,
+            "infoTitle": "We recommend using this header",
+            "info": "Postman added the Connection header to indicate the server to keep the underlying network connection open once the current response is received. This allows Postman to reuse the same connection for faster response times in subsequent requests to the same server.\n\nYou can remove this header or enter a new one with a different value, such as `Connection: Close` to control this behaviour.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Connection",
+            "value": "keep-alive",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Token 3757ae89966ce31e4bb4a72b53c788069fc75ccc",
+            "type": "text",
+            "id": 0
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:8000/posts/posts/",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "posts",
+            "posts",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "List All Posts",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 3757ae89966ce31e4bb4a72b53c788069fc75ccc",
+                "type": "text",
+                "id": 0
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/posts/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "posts",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:27:06 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "169",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"content\": \"This is my first secure post using my new token!\",\n        \"author\": 1,\n        \"author_username\": \"testuser1\",\n        \"created_at\": \"2026-02-06T13:19:06.820434Z\",\n        \"comments\": []\n    }\n]"
+        },
+        {
+          "name": "Get Post Detail",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 3757ae89966ce31e4bb4a72b53c788069fc75ccc",
+                "type": "text",
+                "id": 0
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/posts/1/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "posts",
+                "1",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:29:41 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, DELETE, HEAD, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "167",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"content\": \"This is my first secure post using my new token!\",\n    \"author\": 1,\n    \"author_username\": \"testuser1\",\n    \"created_at\": \"2026-02-06T13:19:06.820434Z\",\n    \"comments\": []\n}"
+        }
+      ]
+    },
+    {
+      "name": "PUT",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "name": "cache-control",
+            "sortOrder": 2,
+            "infoTitle": "We recommend using this header",
+            "info": "Postman added \"Cache-Control: no-cache\" as a precautionary measure to prevent the server from returning stale response when one makes repeated requests.\n\nYou can remove this header in the app settings or enter a new one with a different value.",
+            "allowedToToggle": false,
+            "disableEdit": true,
+            "previewSettingsLink": "Go to settings",
+            "key": "Cache-Control",
+            "value": "no-cache",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "postman-token",
+            "sortOrder": 3,
+            "infoTitle": "We recommend using this header",
+            "info": "The Postman-Token header appends a random UUID to every outgoing request. Postman adds this header for API developers to better debug requests sent and to ensure separate requests appear distinct to the receiving server.\n\nYou can remove this header in the app settings.",
+            "allowedToToggle": false,
+            "disableEdit": true,
+            "previewSettingsLink": "Go to settings",
+            "key": "Postman-Token",
+            "value": "<calculated when request is sent>",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "content-type",
+            "sortOrder": 4,
+            "infoTitle": "This header was automatically added",
+            "info": "The Content-Type header is added to help the server identify the media type of the request body that is present in this request.\n\nUse the request body tab to control the value or to remove this header.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "previewSettingsLink": "Go to body",
+            "key": "Content-Type",
+            "value": "application/json",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "content-length",
+            "sortOrder": 5,
+            "infoTitle": "This header was automatically added",
+            "info": "The Content-Length header was added to indicate to the server the size of the request body that is added to this request. Server uses this value to parse the request body accurately.\n\nYou can remove the header or enter a new one with a different value.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "previewSettingsLink": "Go to body",
+            "key": "Content-Length",
+            "value": "<calculated when request is sent>",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "host",
+            "sortOrder": 6,
+            "infoTitle": "We recommend using this header",
+            "info": "The Host header is added to identify the domain name for which a request is being sent to the server. This header is implicitly sent by every HTTP client.\n\nYou can remove the header or enter a new one with a different value. It is most likely that without this header, your request will return an HTTP 400 error.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Host",
+            "value": "<calculated when request is sent>",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "user-agent",
+            "sortOrder": 7,
+            "infoTitle": "We recommend using this header",
+            "info": "The User-Agent header is added to help the server identify Postman as the HTTP requesting application or client.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "User-Agent",
+            "value": "PostmanRuntime/7.39.1",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "accept",
+            "sortOrder": 8,
+            "infoTitle": "We recommend using this header",
+            "info": "The \"Accept: */*\" header is added to tell the server that Postman can understand and process all forms of response content types.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Accept",
+            "value": "*/*",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "accept-encoding",
+            "sortOrder": 9,
+            "infoTitle": "We recommend using this header",
+            "info": "The Accept-Encoding header is added to indicate to the server that Postman HTTP client supports a defined list of content-encoding or compression algorithms as response.\n\nYou can remove the header or enter a new one with a different value. Doing that may not accurately render the response within the app.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Accept-Encoding",
+            "value": "gzip, deflate, br",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "name": "connection",
+            "sortOrder": 10,
+            "infoTitle": "We recommend using this header",
+            "info": "Postman added the Connection header to indicate the server to keep the underlying network connection open once the current response is received. This allows Postman to reuse the same connection for faster response times in subsequent requests to the same server.\n\nYou can remove this header or enter a new one with a different value, such as `Connection: Close` to control this behaviour.",
+            "allowedToToggle": true,
+            "disableEdit": true,
+            "key": "Connection",
+            "value": "keep-alive",
+            "system": true,
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Token f8092bfda9e68e1a7ea74b3aecc77f1ffc7732a2",
+            "type": "text",
+            "id": 0
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"content\": \"I am a hacker trying to change your post!\",\n    \"author\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:8000/posts/posts/1/",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "posts",
+            "posts",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Post (As Author)",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 3757ae89966ce31e4bb4a72b53c788069fc75ccc",
+                "type": "text",
+                "id": 0
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"content\": \"This post has been UPDATED by the author!\",\n    \"author\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/posts/1/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "posts",
+                "1",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:38:18 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, DELETE, HEAD, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "160",
+              "type": "text"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains; preload",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"content\": \"This post has been UPDATED by the author!\",\n    \"author\": 1,\n    \"author_username\": \"testuser1\",\n    \"created_at\": \"2026-02-06T13:19:06.820434Z\",\n    \"comments\": []\n}"
+        },
+        {
+          "name": "Update Post (As Non-Author)",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token f8092bfda9e68e1a7ea74b3aecc77f1ffc7732a2",
+                "type": "text",
+                "id": 0
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"content\": \"I am a hacker trying to change your post!\",\n    \"author\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/posts/1/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "posts",
+                "1",
+                ""
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:42:49 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, DELETE, HEAD, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "63",
+              "type": "text"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains; preload",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "DELETE",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Post",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 3757ae89966ce31e4bb4a72b53c788069fc75ccc",
+                "type": "text",
+                "id": 0
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:8000/posts/posts/1/",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "posts",
+                "posts",
+                "1",
+                ""
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": "JSON",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.5 Python/3.14.2",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 06 Feb 2026 13:50:02 GMT",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept",
+              "type": "text"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, DELETE, HEAD, OPTIONS",
+              "type": "text"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "39",
+              "type": "text"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains; preload",
+              "type": "text"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "type": "text"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin",
+              "type": "text"
+            },
+            {
+              "key": "Connection",
+              "value": "close",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    }
+  ]
+}
